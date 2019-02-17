@@ -1,0 +1,7 @@
+#wrapper{
+	display: flex;
+}
+#movie-list{
+	min-width: 150px;
+	margin-right: 20px;
+}
