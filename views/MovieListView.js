@@ -31,7 +31,6 @@ export default class MovieListView extends View {
 			} else if (target.classList.contains('movie-poster')) {
 				this.detailElement.setMovie(this.model.getMovieById(target.previousElementSibling.dataset.id));
 			}
-			debugger
 		});
 		const addButton = document.querySelector('#add-new');
 		addButton.addEventListener('click', this.addMovie.bind(this));
@@ -40,14 +39,21 @@ export default class MovieListView extends View {
 	addMovie () {
 		const movie = {
 			name: 'New Movie',
-			id: '22'
+			id: '22',
+			url: 'https://via.placeholder.com/205x307/fff?text=New+Movie'
 		}
 		this.element.appendChild(new MovieView({
 			model: movie
 		}).render().element)
 	}
 	render() {
-		this.element.innerHTML = '<button id="add-new" type="button">Add new</button>';
+		let wrapper = document.querySelector('.movies-area');
+		let ButtonAddNew = document.createElement('button');
+		ButtonAddNew.setAttribute("id", "add-new");
+		ButtonAddNew.className = "btn";
+		ButtonAddNew.innerText = "Add new movie";
+		wrapper.appendChild(ButtonAddNew);
+		// this.element.innerHTML = '<button id="add-new" type="button">Add new</button>';
 		this.movieViews.forEach(view => {
 			this.element.appendChild(view.render().element)
 		})
