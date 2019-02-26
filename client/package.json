@@ -1,22 +1,27 @@
 {
-  "name": "cinema-app-server",
+  "name": "cinema-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "hillel project",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-static"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/konstantin-kh/cinema-app.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "k.pomazan",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/konstantin-kh/cinema-app/issues"
   },
   "homepage": "https://github.com/konstantin-kh/cinema-app#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "http-static": "^0.1.1",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.3"
   }
 }
