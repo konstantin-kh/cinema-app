@@ -36,7 +36,8 @@ export default class MovieListView extends View {
         }).render().element)
     }
     render() {
-        this.element.innerHTML = '<button id="add-new" type="button">Add new</button>';
+        this.element.innerHTML = `<div class="title"><h1>Movies today</h1></div>
+                                   <button id="add-new" type="button">Add new</button>`;
         this.movieViews.forEach(view => {
             this.element.appendChild(view.render().element)
         })

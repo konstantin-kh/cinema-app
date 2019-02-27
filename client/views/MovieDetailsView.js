@@ -9,13 +9,25 @@ export default class MovieDetailsView extends View {
         return this.render();
     }
     render () {
-        const {name, director, year} = this.model;
+        const {name, banner, genre, director, year, description} = this.model;
         
         let movie = document.createElement('div');
-        movie.innerHTML = ` <div><a href='#movies'>Back to List</a></div>
-                            <div>title: ${name}</div>
-                            <div>year: ${year}</div>
-                            <div>direcior: ${director}</div>`;
+        movie.innerHTML = ` <div class="title"><h1>Movies details</h1></div>
+                            <div><a href='#movies'>Back to List</a></div>
+                            <div class="poster">
+                                <h3>${name}</h3>
+                                <div class="bg-stretch"><img src="${banner}" alt="${name}" /></div>
+                            </div>
+                            <div class="text-holder">
+                                <div class="meta">
+                                    <div>Genre: ${genre}</div>
+                                    <div>Year: ${year}</div>
+                                    <div>Direcior: ${director}</div>
+                                </div>
+                                <div class="description">
+                                    <p>Description: ${description}</p>
+                                </div>
+                            </div>`;
         this.clear();
         this.element.appendChild(movie);
         return this;

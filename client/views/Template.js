@@ -1,13 +1,12 @@
-import View from './View.js'
-export default class Template extends View {
-	constructor(options) {
-		super(options)
-	}
+export default class Template{
 	renderNav() {
-		this.element.innerHTML = `<ul data-id="${this.model.id}" class="nav">
-									<li><a href=#movies>Movies</a></li>
-									<li><a href=#sessions>Sessions</a></li>
-								 </ul>`;
+		// const {name, director, year} = this.model;
+		let nav = document.createElement('div');
+
+		nav.innerHTML = `<ul class="nav">
+							<li><a href=#movies>Movies</a></li>
+							<li><a href=#sessions>Sessions</a></li>
+						</ul>`;
 		return this;
 	}
 }
