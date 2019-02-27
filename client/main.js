@@ -1,7 +1,7 @@
 import Movies from './models/Movies.js'
 import MovieListView from './views/MovieListView.js'
 import MovieDetailsView from './views/MovieDetailsView.js'
-import Sessions from './views/Sessions.js'
+import SessionsView from './views/SessionsView.js'
 
 let movieView = new MovieListView({
 	model:  new Movies(),
@@ -12,7 +12,7 @@ const movieDetailsView = new MovieDetailsView({
 	className: 'movies-detail'
 });
 
-const sessions = new Sessions({
+const sessionsView = new SessionsView({
 	className: 'sessions-wrap'
 });
 
@@ -30,7 +30,7 @@ const routes = [{
 {
 	name: 'movieDetails',
 	url: '#sessions',
-	view: sessions
+	view: sessionsView
 }]
 
 function matchView(url) {
