@@ -5,11 +5,11 @@ import SessionsView from './views/SessionsView.js'
 
 let movieView = new MovieListView({
 	model:  new Movies(),
-	className: 'wrap'
+	className: 'main-wrap'
 });
 
 const movieDetailsView = new MovieDetailsView({
-	className: 'movies-detail'
+	className: 'movies-detail-wrap'
 });
 
 const sessionsView = new SessionsView({
@@ -34,35 +34,56 @@ const routes = [{
 }]
 
 function matchView(url) {
-	const view = null;
+	let parts = window.location.hash.split('/');
+	let id = parts[parts.length-1];
+	let view = null;
+	let route = routes.find(item => item.url === id);
+
+	if (typeof route !== 'undefined') {
+		view = route.view.render();
+	} else {
+		view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
+	}
+	
 	return view;
 }
 
 let container = document.getElementById('route-container');
 
 window.addEventListener('hashchange', e => {
-	let parts = window.location.hash.split('/');
-	let id = parts[parts.length-1];
-	let view = null
+	// let parts = window.location.hash.split('/');
+	// let id = parts[parts.length-1];
+	let view = null;
 	container.innerHTML = '';
-	if (id === '#movies') {
+
+	view = matchView(window.location.hash);
+
+	// if (id === '#movies') {
+
+	// 	// let route = routes.find(item => item.url === id);
+	// 	// view = route.view.render();
 		
-		let route = routes.find(item => item.url === id);
-		view = route.view.render();
-		
-	} else if (id === '#sessions') {
-		 let route = routes.find(item => item.url === id);
-		 view = route.view.render();
-	} else {
-		view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
-	}
+
+	// } else if (id === '#sessions') {
+
+	// 	 let route = routes.find(item => item.url === id);
+	// 	//  view = route.view.render();
+
+	// } else {
+
+	// 	view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
+
+	// }
+
 	container.appendChild(view.element);
 })
 window.addEventListener('load', e => {
-	const route = routes.find(item => item.default === true);
-	const view = route.view.render();
+	let view = null;
+	// const route = routes.find(item => item.default === true);
+	// const view = route.view.render();
+
+	view = matchView(window.location.hash);
 	container.appendChild(view.element)
-	// navbar.appendChild(template.renderNav());
 })
 
 

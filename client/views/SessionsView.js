@@ -5,9 +5,9 @@ export default class Sessions extends View {
 	}
 
 	render () {
-		this.element.innerHTML = ` <div><a href='#movies'>Back to List</a></div>
-								<div class="title"><h1>Sessions</h1></div>
-								<h3>Error</h3>`;
+		this.element.innerHTML = ` <div class="title"><h1>Sessions</h1></div>
+															<div><a href='#movies'>Back to List</a></div>
+															<h3>Error</h3>`;
 		return this;
 	}
 }

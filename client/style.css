@@ -21,7 +21,7 @@ body {
 }
 
 /* HTML5 display definitions
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
@@ -80,7 +80,7 @@ template {
 }
 
 /* Links
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Remove the gray background color from active links in IE 10.
@@ -101,7 +101,7 @@ a:hover {
 }
 
 /* Text-level semantics
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
@@ -176,7 +176,7 @@ sub {
 }
 
 /* Embedded content
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Remove border when inside `a` element in IE 8/9/10.
@@ -195,7 +195,7 @@ svg:not(:root) {
 }
 
 /* Grouping content
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Address margin not present in IE 8/9 and Safari.
@@ -235,7 +235,7 @@ samp {
 }
 
 /* Forms
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
@@ -407,7 +407,7 @@ optgroup {
 }
 
 /* Tables
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Remove most spacing between table cells.
@@ -444,7 +444,7 @@ th {
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * 1. Correct the line height in all browsers.
@@ -457,7 +457,7 @@ html {
 }
 
 /* Sections
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Remove the margin in all browsers.
@@ -486,7 +486,7 @@ h1 {
 }
 
 /* Grouping content
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -510,7 +510,7 @@ pre {
 }
 
 /* Text-level semantics
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Remove the gray background on active links in IE 10.
@@ -582,7 +582,7 @@ sup {
 }
 
 /* Embedded content
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Remove the border on images inside links in IE 10.
@@ -593,7 +593,7 @@ img {
 }
 
 /* Forms
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * 1. Change the font styles in all browsers.
@@ -756,7 +756,7 @@ textarea {
 }
 
 /* Interactive
-   ========================================================================== */
+	 ========================================================================== */
 
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
@@ -775,7 +775,7 @@ summary {
 }
 
 /* Misc
-   ========================================================================== */
+	 ========================================================================== */
 
 /**
  * Add the correct display in IE 10+.
@@ -943,8 +943,8 @@ input[type="submit"] {
 }
 
 button.btn{
-  padding-top: 0;
-  padding-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 button:hover,
@@ -1126,7 +1126,7 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: #000;
+	background:rgba(0,0,0, .9);
 }
 
 .header-holder {
@@ -1213,12 +1213,12 @@ body {
 }
 
 #movie-list img{
-  max-width: inherit;
-  width: 100%;
+	max-width: inherit;
+	width: 100%;
 }
 
 .movies-area h3{
-  font-size: 18px;
+	font-size: 18px;
 }
 
 .btn{
@@ -1267,12 +1267,12 @@ body {
 	height: 100%;
 	object-fit: cover;
 }
-.movies-detail .poster{
+.movies-detail-wrap .poster{
 	position: relative;
 	height: 400px;
-	margin-bottom: 30px;
+	margin: 30px 0;
 }
-.movies-detail .poster:after{
+.movies-detail-wrap .poster:after{
 	content: '';
 	position: absolute;
 	top: 0;
@@ -1282,7 +1282,7 @@ body {
 	background: radial-gradient(ellipse at center, transparent 50%, #000 100%), linear-gradient(45deg, #000 0%, transparent 50%);
 }
 
-.movies-detail h3{
+.movies-detail-wrap h3{
 	position: absolute;
 	z-index: 1;
 	bottom: 50px;
@@ -1292,12 +1292,21 @@ body {
 	font-size: 80px;
 	letter-spacing: -2px;
 }
-.movies-detail .text-holder {
+.movies-detail-wrap .text-holder {
 	display: flex;
 	justify-content: space-between;
 }
-.movies-detail .meta {
-	width: 100%;
-	max-width: 300px;
+.movies-detail-wrap .meta {
+	flex: 1 0 20%;
 	margin-right: 30px;
+}
+
+.main-wrap:after{
+	content:'';
+	display: block;
+	clear: both;
+}
+.movie-item{
+	float: left;
+	padding: 0 1px 10px 0;
 }
