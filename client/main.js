@@ -3,88 +3,72 @@ import MovieListView from './views/MovieListView.js'
 import MovieDetailsView from './views/MovieDetailsView.js'
 import SessionsView from './views/SessionsView.js'
 
+let container = document.getElementById('route-container');
+
 let movieView = new MovieListView({
-	model:  new Movies(),
-	className: 'main-wrap'
+  model:  new Movies('api/movies'),
+  className: 'main-wrap'
 });
 
 const movieDetailsView = new MovieDetailsView({
-	className: 'movies-detail-wrap'
+  className: 'movies-detail-wrap'
 });
 
 const sessionsView = new SessionsView({
-	className: 'sessions-wrap'
+  className: 'sessions-wrap'
 });
 
 const routes = [{
-	name: 'movies',
-	url: '#movies',
-	view: movieView,
-	default: true
+  name: 'movies',
+  url: '#movies',
+  view: movieView,
+  default: true
 },
 {
-	name: 'movieDetails',
-	url: '#movies/:id',
-	view: movieDetailsView
+  name: 'movieDetails',
+  url: '#movies/:id',
+  view: movieDetailsView
 },
 {
-	name: 'movieDetails',
-	url: '#sessions',
-	view: sessionsView
+  name: 'movieDetails',
+  url: '#sessions',
+  view: sessionsView
 }]
 
 function matchView(url) {
-	let parts = window.location.hash.split('/');
-	let id = parts[parts.length-1];
-	let view = null;
-	let route = routes.find(item => item.url === id);
+  let parts = window.location.hash.split('/');
+  let id = parts[parts.length-1];
+  let view = null;
+  let route = routes.find(item => item.url === id);
+  let routeDefault = routes.find(item => item.default === true);
 
-	if (typeof route !== 'undefined') {
-		view = route.view.render();
-	} else {
-		view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
-	}
-	
-	return view;
+  if (route) {
+    view = route.view.render();
+  } else if (typeof route === "undefined") {
+    view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
+  } else {
+    view = routeDefault.view.render();
+  }
+  
+  return view;
 }
 
-let container = document.getElementById('route-container');
-
 window.addEventListener('hashchange', e => {
-	// let parts = window.location.hash.split('/');
-	// let id = parts[parts.length-1];
-	let view = null;
-	container.innerHTML = '';
-
-	view = matchView(window.location.hash);
-
-	// if (id === '#movies') {
-
-	// 	// let route = routes.find(item => item.url === id);
-	// 	// view = route.view.render();
-		
-
-	// } else if (id === '#sessions') {
-
-	// 	 let route = routes.find(item => item.url === id);
-	// 	//  view = route.view.render();
-
-	// } else {
-
-	// 	view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
-
-	// }
-
-	container.appendChild(view.element);
+  let view = null;
+  
+  container.innerHTML = '';
+  view = matchView(window.location.hash);
+  container.appendChild(view.element);
 })
+
 window.addEventListener('load', e => {
-	let view = null;
-	// const route = routes.find(item => item.default === true);
-	// const view = route.view.render();
+  let view = null;
+  view = matchView(window.location.hash);
 
-	view = matchView(window.location.hash);
-	container.appendChild(view.element)
+  container.appendChild(view.element)
+
+  view.initialize().then(() => {
+    view.render();
+    container.appendChild(view.element)
+  });
 })
-
-
-

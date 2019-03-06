@@ -1,20 +1,26 @@
 import View from './View.js'
 import MovieView from './MovieView.js'
+import router from '../Routes.js'
 export default class MovieListView extends View {
     constructor(options) {
         super(options);
-        this.model.getMovies().then(result => {
-            this.movieViews = [];
-            this.model.movies.forEach((item)=> {
+        this.movieViews = [];
+        this.delegateEvents();
+    }
+
+    initialize () {
+        return this.model.getMovies().then(result => {
+            result.forEach((item) => {
                 this.movieViews.push(new MovieView({
                     model: item,
                     tagName: 'div',
                     className: 'movie-item'
                 }))
             })
-            this.delegateEvents();
+            
         })
     }
+
     delegateEvents () {
         // this.element.addEventListener('click', (e)=> {
         //     const target = e.target;
@@ -37,7 +43,6 @@ export default class MovieListView extends View {
     }
     render() {
         this.element.innerHTML = `<div class="title"><h1>Movies today</h1></div>`;
-                                  //  <button id="add-new" type="button">Add new</button>`;
 
         this.movieViews.forEach(view => {
             this.element.appendChild(view.render().element)
