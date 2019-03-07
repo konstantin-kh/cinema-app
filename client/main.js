@@ -44,10 +44,10 @@ function matchView(url) {
 
   if (route) {
     view = route.view.render();
-  } else if (typeof route === "undefined") {
-    view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
-  } else {
+  } else if (parts[0] === '' || parts[0] === null || parts[0] === undefined) {
     view = routeDefault.view.render();
+  } else {
+    view = movieDetailsView.setMovie(movieView.model.getMovieById(id))
   }
   
   return view;
