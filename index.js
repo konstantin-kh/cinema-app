@@ -97,5 +97,8 @@ app.use(express.static(__dirname +'/client'))
 const port = 3333
 
 app.get('/', (req, res) => res.sendFile(__dirname +'/index.html'))
+app.get('/movies', (req, res) => res.sendFile(__dirname +'/index.html'))
 app.get('/api/movies', (req, res) => res.send(movies))
+app.get('/api/sessions', (req, res) => res.send(sessions))
+app.get('/api/movies/:id', (req, res) => res.send(movies[req.params.id]))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

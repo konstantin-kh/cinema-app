@@ -13,7 +13,7 @@ export default class MovieDetailsView extends View {
         
         let movie = document.createElement('div');
         movie.innerHTML = ` <div class="title"><h1>Movies details</h1></div>
-                            <div><a href='#movies'>Back to List</a></div>
+                            <div><a href='/movies'>Back to List</a></div>
                             <div class="poster">
                                 <h3>${name}</h3>
                                 <div class="bg-stretch"><img src="${banner}" alt="${name}" /></div>

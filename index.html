@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Cinema APP</title>
 	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet"> -->
 </head>
 <body>
 	<div id="wrapper">
@@ -15,12 +15,12 @@
 				<div class="container-fluid">
 					<div class="header-holder">
 						<div class="logo">
-							<a href="#movies"><img src="images/logo.svg" width="75" height="70" alt="Cinema App"></a>
+							<a href="/movies"><img src="images/logo.svg" width="75" height="70" alt="Cinema App"></a>
 						</div>
 						<nav class="navbar">
 							<ul class="nav nav-left">
-								<li><a href="#movies">Movies</a></li>
-								<li><a href="#sessions">Sessions</a></li>
+								<li><a href="/movies">Movies</a></li>
+								<li><a href="/sessions">Sessions</a></li>
 							</ul>
 							<a class="btn-outline-default" href="#">Log in</a>
 						</nav>
@@ -34,10 +34,11 @@
 		</div>
 		<footer class="footer">
 			<div class="container-fluid">
-				<p>&copy; 2019 <a href="#movies">Cinema-app.com</a></p>
+				<p>&copy; 2019 <a href="/movies">Cinema-app.com</a></p>
 			</div>
 		</footer>
 	</div>
+	<script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
 	<script src="main.js" defer type="module"></script>
 </body>
 </html>
