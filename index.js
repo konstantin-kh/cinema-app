@@ -96,9 +96,22 @@ let movies = [{
 app.use(express.static(__dirname +'/client'))
 const port = 3333
 
-app.get('/', (req, res) => res.sendFile(__dirname +'/index.html'))
-app.get('/movies', (req, res) => res.sendFile(__dirname +'/index.html'))
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 app.get('/api/movies', (req, res) => res.send(movies))
 app.get('/api/sessions', (req, res) => res.send(sessions))
 app.get('/api/movies/:id', (req, res) => res.send(movies[req.params.id]))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+// app.delete('/api/movies/:id', (req, res) => {
+//   console.log(req.params);
+//   movies.pop();
+//   res.sendStatus(200);
+// });
+
+// app.post('/api/movies', (req, res) => {
+//   console.log(req.body);
+//   res.sendStatus(200);
+// });
+
+
+// app.listen(port, () => console.log(`Example app listening on port ${port}!`))

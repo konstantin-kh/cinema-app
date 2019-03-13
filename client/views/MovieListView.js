@@ -42,7 +42,7 @@ export default class MovieListView extends View {
         });
 
         this.filter = document.createElement('div');
-        this.filter.className = 'search-form'
+        this.filter.className = 'search-area'
         this.filter.innerHTML = `<input type="text" class="filter" id="filter" placeholder="Search..." />`;
         
         this.filter.addEventListener('input', (e) => {
@@ -60,6 +60,11 @@ export default class MovieListView extends View {
 
         this.list = document.createElement('div');
         this.list.className = 'list';
+
+        this.title = document.createElement('div');
+        this.title.className = 'title';
+        this.title.innerHTML = '<h1>Movies today</h1>';
+
         this.render();
     }
     // addMovie () {
@@ -74,6 +79,7 @@ export default class MovieListView extends View {
     render() {
         this.element.appendChild(this.filter);
         this.element.appendChild(this.list);
+        this.element.appendChild(this.title);
         this.renderList();
 
         this.movieViews.forEach(view => {

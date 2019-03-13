@@ -1120,7 +1120,7 @@ body {
 	color: #3cb4e7;
 }
 
-.header {
+[id="header"] {
 	position: fixed;
 	z-index: 999;
 	top: 0;
