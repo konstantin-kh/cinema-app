@@ -1310,3 +1310,43 @@ body {
 	float: left;
 	padding: 0 1px 10px 0;
 }
+
+#heading{
+	position: relative;
+}
+#heading .title{
+	padding-right: 275px;
+}
+.search-area {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.search-area input[type="text"]{
+	border-radius: 4px;
+}
+
+.movies-list-item{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 2em;
+}
+
+.btn-back{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding-left: 20px;
+}
+.btn-back:after{
+	content:'<';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%); 
+}
+
+.movie-name{
+	padding-top: 15px;
+}

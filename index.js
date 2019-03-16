@@ -53,13 +53,13 @@ let movies = [{
   },
   {
     id: "6",
-    name: "A Star Is Born",
-    genre: "Drama",
-    director: "Bradley Cooper",
-    year: 2018,
-    url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1/amc-cdn/production/2/movies/52500/52472/PosterDynamic/43693.jpg",
-    banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1/amc-cdn/production/2/movies/52500/52472/MovieStills/241805R2.jpg",
-    description: "Seasoned musician Jackson Maine (Bradley Cooper) discovers-and falls in love with-struggling artist Ally (Gaga). She has just about given up on her dream to make it big as a singer - until Jack coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons."
+    name: "Captive State",
+    genre: "SCI FI",
+    director: "Rupert Wyatt",
+    year: 2019,
+    url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1551889052/amc-cdn/production/2/movies/53800/53816/PosterDynamic/74303.jpg",
+    banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1/amc-cdn/production/2/movies/53800/53816/MovieStillDynamic/46536.jpg",
+    description: "Set in a Chicago neighborhood nearly a decade after an occupation by an extra-terrestrial force, CAPTIVE STATE explores the lives on both sides of the conflicts - the collaborators and the dissidents."
   },
   {
     id: "7",
@@ -83,14 +83,44 @@ let movies = [{
   },
   {
   id: "9",
-  name: "Cold Pursuit",
+  name: "Captain Marvel",
   genre: "Action",
-  director: "Hans Petter Moland",
-  year: 2018,
-  url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1/amc-cdn/production/2/movies/58000/58050/PosterDynamic/67719.jpg",
-  banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1/amc-cdn/production/2/movies/58000/58050/MovieStillDynamic/67848.jpg",
+  director: "Anna Boden and Ryan Fleck",
+  year: 2019,
+  url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1/amc-cdn/production/2/movies/45800/45838/PosterDynamic/67602.jpg",
+  banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1551480547/amc-cdn/production/2/movies/45800/45838/HeroDesktopDynamic/74224.jpg",
   description: "Seasoned musician Jackson Maine (Bradley Cooper) discovers-and falls in love with-struggling artist Ally (Gaga). She has just about given up on her dream to make it big as a singer - until Jack coaxes her into the spotlight. But even as Ally's career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons."
   },
+  {
+    id: "10",
+    name: "Wonder Park",
+    genre: "Animation",
+    director: "Dylan Brown",
+    year: 2019,
+    url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1/amc-cdn/production/2/movies/49800/49764/PosterDynamic/67725.jpg",
+    banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1/amc-cdn/production/2/movies/49800/49764/MovieStillDynamic/67740.jpg",
+    description: "WONDER PARK Park tells the story of a magnificent amusement park where the imagination of a wildly creative girl named June comes alive."
+  },
+  {
+    id: "11",
+    name: "Five Feet Apart",
+    genre: "Drama",
+    director: "Justin Baldoni",
+    year: 2019,
+    url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1548965262/amc-cdn/production/2/movies/57400/57359/Poster/273788R1.jpg",
+    banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1549022617/amc-cdn/production/2/movies/57400/57359/MovieStills/273788R2.jpg",
+    description: "What would love feel like if you were forbidden to touch? FIVE FEET APART is the story of Stella (Haley Lu Richardson) and Will (Cole Sprouse), two young people who refuse to be defined by the obstacles that separate them."
+  },
+  {
+    id: "12",
+    name: "No Manches Frida 2",
+    genre: "Comedy",
+    director: "Nacho Garcia Velilla", 
+    year: 2019,
+    url: "https://amc-theatres-res.cloudinary.com/image/upload/f_auto,fl_lossy,h_600,q_auto,w_400/v1549488967/amc-cdn/production/2/movies/58800/58797/PosterDynamic/73613.jpg",
+    banner: "https://amc-theatres-res.cloudinary.com/image/upload/c_fill,f_auto,fl_lossy,g_auto,h_600,q_auto,w_1600/v1549800232/amc-cdn/production/2/movies/58800/58797/MovieStills/282428R2.jpg",
+    description: "In this over-the-top sequel to the smash hit NO MANCHES FRIDA, the all-star cast of the original (Omar Chaparro and Martha Higareda) and some fresh new faces (Itati Cantoral and Aaron Diaz) leave the school yard and hit the beach in NO MANCHES FRIDA 2! But there's trouble in paradise... literally. When the seemingly reformed ex-con Zequi is about to marry the love of his life, the lovably nerdy Lucy, wedding day jitters turn into a full blown fiasco and Lucy calls the wedding off. Meanwhile, the school finds itself in deep trouble and the gang heads to the water to compete in the tournament of their lives. Once they're all seaside, Lucy runs into her high school sweetheart Mario, whom since she last saw him has transformed into a smoking hot hunk. He's coach of the opposing squad and Zequi finds himself a rival in more than one competition. Now he has to pull out all the stops to wrangle in his rowdy kids, win Lucy back, and in case that wasn't enough, save the school from shutting down by leading Frida High to victory!"
+  }
 ]
 
 app.use(express.static(__dirname +'/client'))

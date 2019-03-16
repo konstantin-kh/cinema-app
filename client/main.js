@@ -16,7 +16,7 @@ const headerView = new HeaderView({
 
 const movieView = new MovieListView({
   model: new Movies('api/movies'),
-  className: 'main-wrap'
+  className: 'movies-list-item'
 });
 
 const movieDetailsView = new MovieDetailsView({
@@ -26,7 +26,6 @@ const movieDetailsView = new MovieDetailsView({
 const sessionsView = new SessionsView({
   className: 'sessions-wrap'
 });
-
 
 router.registerRoute({
   name: 'header',
@@ -38,8 +37,8 @@ router.registerRoute({
   name: 'movies',
   url: '/movies',
   view: movieView,
-  title: 'Movies today',
-  titleView: titleView,
+  // title: 'Movies today',
+  // titleView: titleView,
   default: true
 });
 
@@ -56,10 +55,10 @@ router.registerRoute({
 });
 
 //const {tagName='div', el, className='title', tagNameTitle='h1', text='Main title'} = options;
-var mainTitle = router.routes.find(item => item.title !== undefined);
-var titleView = new TitleView({
-  text: mainTitle.title
-});
+// var mainTitle = router.routes.find(item => item.title !== undefined);
+// var titleView = new TitleView({
+//   text: mainTitle.title
+// });
 
 // function matchView(url) {
 //   let parts = window.location.hash.split('/');
@@ -92,20 +91,21 @@ window.addEventListener('load', e => {
   const view = route.view;
   const headerRoute = router.routes.find(item => item.name === 'header');
   const headerViewRender = headerRoute.view;
-  const titleRoute = router.routes.find(item => item.title !== undefined);
-  const titleView = titleRoute.titleView;
+  // const titleRoute = router.routes.find(item => item.title !== undefined);
+  // const titleView = titleRoute.titleView;
 
-  header.appendChild(headerViewRender.element);
+  // header.appendChild(headerViewRender.element);
   container.appendChild(view.element);
 
   history.pushState({name: route.name}, route.name, '/');
+  // history.pushState({name: route.name}, 'movie-detail', `/movies/${target.dataset.id}`);
 
   view.initialize().then(() => {
     view.clear();
     view.render();
     headerViewRender.render();
-    titleView.render();
-    title.appendChild(titleView.element);
+    // titleView.render();
+    // title.appendChild(titleView.element);
     header.appendChild(headerViewRender.element);
     container.appendChild(view.element)
   });

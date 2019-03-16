@@ -25,20 +25,30 @@ export default class MovieListView extends View {
     delegateEvents () {
         this.element.addEventListener('click', (e)=> {
             e.preventDefault();
-            const target = e.target;
-            
-            const movie = this.model.getMovieById(target.dataset.id);
-            let route = router.getRouteByName('details');
+            let target = e.target;
 
-            if (!e.target.classList.contains('movie-detail-link')) return;
+            while (target !== e.target.classList.contains('.movie-detail-link')) {
+                if (target.classList.contains('movie-detail-link')) {
+                    
+                    const movie = this.model.getMovieById(target.dataset.id);
+                    let route = router.getRouteByName('details');
 
-            history.pushState({name: route.name}, 'movie-detail', `/movies/${target.dataset.id}`);
-            route.view.setMovie(movie);
+                    history.pushState({name: route.name}, 'movie-detail', `/movies/${target.dataset.id}`);
 
-            let container = document.getElementById('route-container');
-            
-            container.innerHTML = '';
-            container.appendChild(route.view.element);
+                    route.view.setMovie(movie);
+
+                    let container = document.getElementById('route-container');
+
+                    this.title.innerHTML = '';
+                    this.title.innerHTML = '<h1>Movies details</h1>'
+                    this.filter.innerHTML = '';
+
+                    container.innerHTML = '';
+                    container.appendChild(route.view.element);
+                    return
+                }
+                target = target.parentNode;
+            }
         });
 
         this.filter = document.createElement('div');
@@ -58,8 +68,8 @@ export default class MovieListView extends View {
             this.renderList();
         });
 
-        this.list = document.createElement('div');
-        this.list.className = 'list';
+        // this.list = document.createElement('div');
+        // this.list.className = 'list';
 
         this.title = document.createElement('div');
         this.title.className = 'title';
@@ -77,9 +87,15 @@ export default class MovieListView extends View {
     //     }).render().element)
     // }
     render() {
-        this.element.appendChild(this.filter);
-        this.element.appendChild(this.list);
-        this.element.appendChild(this.title);
+        let fragment = document.createDocumentFragment();
+        const titleWrap = document.querySelector('#heading');
+
+        fragment.appendChild(this.title);
+        fragment.appendChild(this.filter);
+
+        titleWrap.appendChild(fragment);
+
+        // this.element.appendChild(this.list);
         this.renderList();
 
         this.movieViews.forEach(view => {
@@ -93,7 +109,7 @@ export default class MovieListView extends View {
         return this;
     }
     renderList() {
-        this.list.innerHTML = '';
+        this.element.innerHTML = '';
         
         this.filteredMovieViews.forEach(view => {
             this.element.appendChild(view.render().element)

@@ -12,8 +12,7 @@ export default class MovieDetailsView extends View {
         const {name, banner, genre, director, year, description} = this.model;
         
         let movie = document.createElement('div');
-        movie.innerHTML = ` <div class="title"><h1>Movies details</h1></div>
-                            <div><a href='/'>Back to List</a></div>
+        movie.innerHTML = ` <div><a class="btn-back" href='/'>Back to Movies</a></div>
                             <div class="poster">
                                 <h3>${name}</h3>
                                 <div class="bg-stretch"><img src="${banner}" alt="${name}" /></div>
