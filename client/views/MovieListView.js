@@ -29,7 +29,7 @@ export default class MovieListView extends View {
 
             while (target !== e.target.classList.contains('.movie-detail-link')) {
                 if (target.classList.contains('movie-detail-link')) {
-                    
+
                     const movie = this.model.getMovieById(target.dataset.id);
                     let route = router.getRouteByName('details');
 

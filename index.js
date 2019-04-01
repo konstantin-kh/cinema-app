@@ -124,7 +124,7 @@ let movies = [{
 ]
 
 app.use(express.static(__dirname +'/client'))
-const port = 3333
+const port = 9000
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 app.get('/api/movies', (req, res) => res.send(movies))
