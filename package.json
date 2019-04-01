@@ -1,23 +1,26 @@
 {
-  "name": "cinema-app-server",
+  "name": "cinema-app-webpack",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": " http-static dist",
+    "build": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/konstantin-kh/cinema-app.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/konstantin-kh/cinema-app/issues"
-  },
-  "homepage": "https://github.com/konstantin-kh/cinema-app#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
